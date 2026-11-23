@@ -107,6 +107,8 @@ const leadST = (s: string): string => {
   return m ? m[0] : '';
 };
 
+/** Tier order is deliberate: exact first, then trailing-whitespace, then
+    both-side, so a stricter match is never shadowed by a looser one. */
 function lineEq(a: string, b: string, tier: number): boolean {
   if (tier === 0) return a === b;
   if (tier === 1) return trimEndST(a) === trimEndST(b);
