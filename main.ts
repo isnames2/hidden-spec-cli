@@ -115,6 +115,7 @@ function lineEq(a: string, b: string, tier: number): boolean {
   return trimST(a) === trimST(b);
 }
 
+// Strict mode tries the exact tier only; normal mode tries all three in order.
 function tiers(strict: boolean): number[] {
   return strict ? [0] : [0, 1, 2];
 }
